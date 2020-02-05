@@ -1,0 +1,31 @@
+{
+  "name": "vector-2d",
+  "version": "0.1.0",
+  "description": "A 2D vector math module written in TypeScript",
+  "main": "./dist/mod.js",
+  "scripts": {
+    "build": "npm run-script build-module && npm run-script test && npm run-script build-docs",
+    "build-module": "tsc",
+    "build-docs": "typedoc ./src/mod.ts",
+    "test": "nyc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "TBA"
+  },
+  "keywords": [
+    "vector",
+    "vector 2D",
+    "math",
+    "physics",
+    "mathematics"
+  ],
+  "author": "Thomas O. McCracken",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^7.0.1",
+    "typedoc": "^0.16.9",
+    "nyc": "^15.0.0"
+  },
+  "dependencies": {}
+}
