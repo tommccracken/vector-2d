@@ -86,19 +86,19 @@
 				</a>
 				<p>Import the library</p>
 				<p>[TBA once package prepared]</p>
-				<p>Create a vector with x and y component values of 1.5 and 3 respectively.</p>
+				<p>Create a vector with x and y component values of 1.5 and 3 respectively</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">let</span> vector1 = <span class="hljs-keyword">new</span> Vector2D(<span class="hljs-number">1.5</span>, <span class="hljs-number">3</span>);</code></pre>
 				<p>Get the length of the vector</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">let</span> length = vector1.getLength();</code></pre>
 				<p>Get a normal vector for vector1</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">let</span> normalVector = vector1.normalVector();</code></pre>
-				<p>Create a second vector and add it to the first vector.</p>
+				<p>Create a second vector and add it to the first vector</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">let</span> vector2 = <span class="hljs-keyword">new</span> Vector2D(<span class="hljs-number">-1</span>, <span class="hljs-number">5</span>);
 <span class="hljs-keyword">let</span> vector3 = vector1.add(vector2);</code></pre>
-				<p><em>Note: This is an immutable addition operation as vector1 and vector2 will not be not modified. The result will be returned as a new Vector2D object.</em></p>
+				<p><em>Note: This is an immutable addition operation as vector1 and vector2 are not modified. The result will be returned as the new Vector2D object, vector3.</em></p>
 				<p>Perform a mutable addition</p>
 				<pre><code class="language-javascript">vector1.mutableAdd(vector2);</code></pre>
-				<p><em>Note: In this case the result of the addition operation will be stored in the original Vector2D object vector1.</em></p>
+				<p><em>Note: This is a mutable addition operation as the result of the addition operation is stored in the original Vector2D object vector1. Mutable operations are likely to be more appropriate for applications involving many vector operations (due to a reduction in the overhead associated with creating and cleaning up new Vector2D objects).</em></p>
 				<p>Calculate the dot and cross products of vector1 and vector2</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">let</span> dotProduct = vector1.getDotProduct(vector2);
 <span class="hljs-keyword">let</span> crossProduct = vector1.getCrossProduct(vector2);</code></pre>

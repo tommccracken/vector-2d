@@ -22,7 +22,7 @@ Import the library
 
 [TBA once package prepared]
 
-Create a vector with x and y component values of 1.5 and 3 respectively.
+Create a vector with x and y component values of 1.5 and 3 respectively
 
 ```javascript
 let vector1 = new Vector2D(1.5, 3);
@@ -40,14 +40,14 @@ Get a normal vector for vector1
 let normalVector = vector1.normalVector();
 ```
 
-Create a second vector and add it to the first vector.
+Create a second vector and add it to the first vector
 
 ```javascript
 let vector2 = new Vector2D(-1, 5);
 let vector3 = vector1.add(vector2);
 ```
 
-*Note: This is an immutable addition operation as vector1 and vector2 will not be not modified. The result will be returned as a new Vector2D object.*
+*Note: This is an immutable addition operation as vector1 and vector2 are not modified. The result will be returned as the new Vector2D object, vector3.*
 
 Perform a mutable addition
 
@@ -55,7 +55,7 @@ Perform a mutable addition
 vector1.mutableAdd(vector2);
 ```
 
-*Note: In this case the result of the addition operation will be stored in the original Vector2D object vector1.*
+*Note: This is a mutable addition operation as the result of the addition operation is stored in the original Vector2D object vector1. Mutable operations are likely to be more appropriate for applications involving many vector operations (due to a reduction in the overhead associated with creating and cleaning up new Vector2D objects).*
 
 Calculate the dot and cross products of vector1 and vector2
 

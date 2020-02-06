@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "TBA"
+    "url": "https://github.com/tommccracken/vector-2d.git"
   },
   "keywords": [
     "vector",
@@ -20,6 +20,7 @@
     "physics",
     "mathematics"
   ],
+  "homepage": "https://github.com/tommccracken/vector-2d",
   "author": "Thomas O. McCracken",
   "license": "MIT",
   "devDependencies": {
