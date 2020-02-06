@@ -14,7 +14,7 @@
 
 const Vector2D = require("../dist/mod").Vector2D;
 const assert = require('assert');
-const epsl = Number.EPSILON;
+const EPSILON = 0.000000001;
 
 describe('Vector constructor', function () {
   let x = 1.5;
@@ -69,10 +69,9 @@ describe('Vector mutable operations methods', function () {
     let v = new Vector2D(x, y);
     it('Check unit vector', function () {
       v.mutableUnitVector();
-      assert.equal((v.getLength() - 2 * epsl) < 1 && (v.getLength() + 2 * epsl) > 1, true);
+      assert.equal((v.getLength() - EPSILON) < 1 && (v.getLength() + EPSILON) > 1, true);
     });
   });
-
   describe('mutableNormalVector method', function () {
     let x = 2.2;
     let y = -4;
@@ -82,7 +81,6 @@ describe('Vector mutable operations methods', function () {
       assert.equal(v.x === -y && v.y === x, true);
     });
   });
-
   describe('mutableAddVector method', function () {
     let x = 2.2;
     let y = -4;
@@ -98,7 +96,6 @@ describe('Vector mutable operations methods', function () {
       assert.equal(v.x === (x + x2) && v.y === (y + y2), true);
     });
   });
-
   describe('mutableSubtractVector method', function () {
     let x = 2.2;
     let y = -4;
@@ -114,7 +111,6 @@ describe('Vector mutable operations methods', function () {
       assert.equal(v.x === (x - x2) && v.y === (y - y2), true);
     });
   });
-
   describe('mutableScaleVector method', function () {
     let x = 2.2;
     let y = -4;
@@ -128,11 +124,9 @@ describe('Vector mutable operations methods', function () {
       assert.equal(v.x === (x * scalar2) && v.y === (y * scalar2), true);
     });
   });
-
 });
 
 describe('Vector immutable operations methods', function () {
-
   describe('scale method', function () {
     let x = 2;
     let y = -2;
@@ -141,20 +135,18 @@ describe('Vector immutable operations methods', function () {
     let scale = 12;
     let v2 = v.scale(scale);
     it('Check length', function () {
-      assert.equal(Math.abs(v2.getLength() - length * scale) < 50 * epsl, true);
+      assert.equal(Math.abs(v2.getLength() - length * scale) < EPSILON, true);
     });
   });
-
   describe('unitVector method', function () {
     let x = 2;
     let y = -2;
     let v = new Vector2D(x, y);
     let v2 = v.unitVector();
     it('Check length', function () {
-      assert.equal(Math.abs(v2.getLength() - 1) < 50 * epsl, true);
+      assert.equal(Math.abs(v2.getLength() - 1) < EPSILON, true);
     });
   });
-
   describe('normalVector method', function () {
     let x = 2;
     let y = -2;
@@ -165,7 +157,6 @@ describe('Vector immutable operations methods', function () {
       assert.equal(v2.y, x);
     });
   });
-
   describe('add method', function () {
     let x = 2;
     let y = -2;
@@ -179,7 +170,6 @@ describe('Vector immutable operations methods', function () {
       assert.equal(v3.y, y + y2);
     });
   });
-
   describe('subtract method', function () {
     let x = 2;
     let y = -2;
@@ -193,13 +183,9 @@ describe('Vector immutable operations methods', function () {
       assert.equal(v3.y, y - y2);
     });
   });
-
 });
 
-
-
 describe('Vector other methods', function () {
-
   describe('getDotProduct method', function () {
     let x = 2;
     let y = -2;
@@ -212,7 +198,6 @@ describe('Vector other methods', function () {
       assert.equal(result, x * x2 + y * y2);
     });
   });
-
   describe('getCrossProduct method', function () {
     let x = 2;
     let y = -2;
@@ -225,7 +210,6 @@ describe('Vector other methods', function () {
       assert.equal(result, x * y2 - y * x2);
     });
   });
-
   describe('getDistanceFromSquared method', function () {
     let x = 2;
     let y = -2;
@@ -238,7 +222,6 @@ describe('Vector other methods', function () {
       assert.equal(result, (x2 - x) * (x2 - x) + (y2 - y) * (y2 - y));
     });
   });
-
   describe('getDistanceFrom', function () {
     let x = 2;
     let y = -2;
@@ -251,7 +234,6 @@ describe('Vector other methods', function () {
       assert.equal(result, Math.sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y)));
     });
   });
-
   describe('getAngleBetween', function () {
     let x = 2;
     let y = -2;
@@ -265,11 +247,9 @@ describe('Vector other methods', function () {
       assert.equal(result, Math.PI / 2);
     });
   });
-
 });
 
 describe('Set vector methods', function () {
-
   describe('setX method', function () {
     let x = 1;
     let y = -1;
@@ -280,7 +260,6 @@ describe('Set vector methods', function () {
       assert.equal(v.x, x2);
     });
   });
-
   describe('setY method', function () {
     let x = 1;
     let y = -1;
@@ -291,7 +270,6 @@ describe('Set vector methods', function () {
       assert.equal(v.y, y2);
     });
   });
-
   describe('setFromVector method', function () {
     let x = 1;
     let y = -1;
@@ -305,7 +283,6 @@ describe('Set vector methods', function () {
       assert.equal(v.y, v2.y);
     });
   });
-
   describe('setFromComponents method', function () {
     let x = 1;
     let y = -1;
@@ -318,7 +295,6 @@ describe('Set vector methods', function () {
       assert.equal(v.y, y2);
     });
   });
-
   describe('setToZero method', function () {
     let x = 1;
     let y = -1;
@@ -329,7 +305,6 @@ describe('Set vector methods', function () {
       assert.equal(v.y, 0);
     });
   });
-
   describe('setToLength method', function () {
     let x = 2;
     let y = 200;
@@ -337,11 +312,9 @@ describe('Set vector methods', function () {
     let length = 80;
     v.setLength(length);
     it('Check vector length', function () {
-      assert.equal(Math.abs(v.getLength() - length) < 15 * epsl, true);
+      assert.equal(Math.abs(v.getLength() - length) < EPSILON, true);
     });
   });
-
-
   describe('setToAngle method', function () {
     let x = 70;
     let y = 200;
@@ -349,10 +322,9 @@ describe('Set vector methods', function () {
     let angle = 1.5;
     v.setAngle(angle);
     it('Check vector angle', function () {
-      assert.equal(Math.abs(v.getAngle() - angle) < 2 * epsl, true);
+      assert.equal(Math.abs(v.getAngle() - angle) < EPSILON, true);
     });
   });
-
 });
 
 describe('Vector utility methods', function () {
@@ -364,7 +336,6 @@ describe('Vector utility methods', function () {
       assert.equal(v.toString(), '(' + x + ', ' + y + ')');
     });
   });
-  
   describe('toJSON method', function () {
     it('Check x component', function () {
       assert.equal(v.toJSON().x, x);
@@ -376,14 +347,12 @@ describe('Vector utility methods', function () {
       assert.deepStrictEqual(v.toJSON(), { "x": x, "y": y });
     });
   });
-
   describe('clone method', function () {
     it('Check cloned vector', function () {
       let v2 = v.clone();
       assert.deepStrictEqual(v, v2);
     });
   });
-
   describe('isZero method', function () {
     it('Check if zero returns false', function () {
       assert.equal(v.isZero(), false);
@@ -393,7 +362,6 @@ describe('Vector utility methods', function () {
       assert.equal(v2.isZero(), true);
     });
   });
-
   describe('isEqual method', function () {
     let x = 1.5;
     let y = -1;
