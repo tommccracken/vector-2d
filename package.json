@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run-script build-module && npm run-script test && npm run-script build-docs",
     "build-module": "tsc",
-    "build-docs": "typedoc ./src/mod.ts",
+    "build-docs": "typedoc --mode file ./src/mod.ts",
     "test": "nyc mocha"
   },
   "repository": {

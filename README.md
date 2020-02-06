@@ -14,7 +14,7 @@ The MIT License (Copyright 2020 Thomas O. McCracken)
 
 ## API
 
-Refer to the [Vector2d](https://tommccracken.github.io/vector-2d/classes/_mod_.vector2d.html) class documentation.
+Refer to the [Vector2d](https://tommccracken.github.io/vector-2d/classes/vector2d.html) class documentation.
 
 ## Basic examples
 
