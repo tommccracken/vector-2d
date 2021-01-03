@@ -13,6 +13,7 @@
  *
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Vector2D = void 0;
 /**
  * The 2D vector class.
  */

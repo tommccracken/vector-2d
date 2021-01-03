@@ -194,7 +194,7 @@ export declare class Vector2D {
      * @category Utility
      */
     toJSON(): {
-        "x": number;
-        "y": number;
+        x: number;
+        y: number;
     };
 }

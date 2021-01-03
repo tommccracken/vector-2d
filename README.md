@@ -1,10 +1,10 @@
 # Introduction
 
-A 2D vector math module written in TypeScript (work in progress).
+A 2D vector math module written in TypeScript.
 
 [Source](https://github.com/tommccracken/vector-2d)
 
-The MIT License (Copyright 2020 Thomas O. McCracken)
+The MIT License (Copyright 2020 - 2021 Thomas O. McCracken)
 
 # Usage
 
